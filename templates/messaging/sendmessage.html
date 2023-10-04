@@ -1,0 +1,9 @@
+<form method="post" action="{% url 'send_message' recipient_id %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="id_body">Message</label>
+      <textarea class="form-control" id="id_body" name="body" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </form>
+  

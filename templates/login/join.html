@@ -1,0 +1,64 @@
+{% load tailwind_tags %}
+<!DOCTYPE html>
+
+<head>
+    {% tailwind_css %}
+    {% load static %}
+ 
+</head>
+<style>
+    body {
+      background-image: url("{% static 'Kendall_Hall_Chico_State.webp' %}");
+      background-size: cover;
+    }
+  </style>
+
+
+
+  <html>
+    <head>
+  
+    {% load static %}
+    </head>
+ 
+
+ <body>
+   <center>
+  <div class="container mx-auto py-8">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto" style="margin-top: 26%;">
+    
+    <a href="/" class=" text-red-400 border-l-4 border-transparent pr-6" style="margin-right: 280px;">
+      Return to Home
+    </a>  
+      <h1 class="text-2xl mb-4">Join </h1>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="mb-4 rounded-md">
+          {{ join_form.as_p }}
+        </div>
+
+
+        
+        <div class="mt-6">
+          <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-blue py-2 px-4 rounded-md">
+            Join
+          </button>
+
+
+
+
+          <a href="/login" class="text-gray-500 hover:text-indigo-500 text-sm" style="margin-left: 200px">Login</a>
+
+
+        </div>
+      </form>
+    </div>
+  </div>
+  
+</center>
+
+  
+   
+    </body>
+    </html>
+

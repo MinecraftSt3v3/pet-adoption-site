@@ -1,0 +1,59 @@
+{% load static tailwind_tags %}
+{% comment %} {% include "navigation.html" %} {% endcomment %}
+{% tailwind_css %}
+{% load static %}
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>
+    Login CSM
+    </title>
+
+  
+  </head>
+ 
+  <style>
+    body {
+      background-image: url("{% static 'Kendall_Hall_Chico_State.webp' %}");
+      background-size: cover;
+    }
+  </style>
+  
+
+
+  <html>
+
+ <body>
+ 
+  
+  <div class="container mx-auto py-8" style="margin-top: 30%;">
+    <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg">
+      <div class="md:flex">
+        <div class="w-full p-6">
+          <a href="/" class=" text-red-400 border-l-4 border-transparent pr-6" style="padding-right: 0px;margin-right: 300px;">
+            Return to Home
+          </a>  
+          <center><h1 class="text-xl font-medium mb-2">Login</h1></center>
+          <form action="/login/" method="POST" class="space-y-4">{% csrf_token %}
+            <div class="flex flex-col">
+              <label for="username" class="text-sm font-semibold">Username</label>
+              <input type="text" name="username" id="username" placeholder="Your username" class="rounded-md px-4 py-2 border focus:outline-none focus:border-indigo-500" required>
+            </div>
+            <div class="flex flex-col">
+              <label for="password" class="text-sm font-semibold">Password</label>
+              <input type="password" name="password" id="password" placeholder="Your password" class="rounded-md px-4 py-2 border focus:outline-none focus:border-indigo-500" required>
+            </div>
+            <div class="flex items-center justify-between">
+              <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-blue py-2 px-4 rounded-md">Login</button>
+              <a href="/join" class="text-gray-500 hover:text-indigo-500 text-sm">Register</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

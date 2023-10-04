@@ -1,0 +1,46 @@
+{% load tailwind_tags %}
+
+<head>
+  {% tailwind_css %}
+  {% comment %} {% include "bootstrap.html" %} {% endcomment %}
+</head>
+
+<style>
+  
+</style>
+
+{% include "navigation.html" %}
+
+<html>
+<center>
+  <body class="bg-sky-50">
+    <div class="mx-auto max-w-3xl bg-white shadow-md rounded-lg px-6 py-8">
+      <h1 class="text-3xl font-bold mb-6">Add To Market</h1>
+
+
+      <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <table class="w-full">
+        {{ form_data.as_table }} 
+
+
+          <tr>
+            <td></td>
+            <td class="flex justify-end pt-4">
+              <a href="/" class="px-4 py-2 rounded-md text-white bg-gray-500 hover:bg-gray-600 mr-4">Cancel</a>
+              <input type="submit" class="px-4 py-2 rounded-md text-white bg-blue-500 hover:bg-blue-600" name="add" value="Add">
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+
+
+
+
+
+</center>
+
+
+</html>

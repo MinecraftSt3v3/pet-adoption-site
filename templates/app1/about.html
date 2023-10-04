@@ -1,0 +1,40 @@
+{% load static tailwind_tags %}
+{% include "navigation.html" %}
+{% tailwind_css %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="icon" type="image/png" href="/static/logo1.png">
+  <title>Countryside Rescue: Adoption</title>
+
+</head>
+
+<h2 class="text-center text-3xl font-bold mb-6">Adoptable Puppies</h2>
+<body class="bg-sky-50">
+  
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-screen-lg">
+    {% for row in uPost %}
+    <div class="p-4">
+      <div class="card rounded-lg">
+        <div class="front">
+          <img class="max-w-full h-auto" src="{{ row.itemPhoto.url }}" alt="">
+        </div>
+        <div class="bg-white border-gray-200 dark:bg-gray-900">
+          <div class="card-content flex flex-col items-center justify-center text-center">
+            <h2 class="text-gray-100 text-lg font-semibold">{{ row.description }}</h2>
+            <p class="text-gray-100">Age: {{ row.category }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+
+</body>
+
+</html>
+
+{% include "footer.html" %}

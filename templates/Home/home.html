@@ -1,0 +1,148 @@
+{% load static tailwind_tags %}
+{% include "navigation.html" %}
+{% tailwind_css %}
+
+<!DOCTYPE html>
+
+<head>
+  <link rel="icon" type="image/png" href="static/logo1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Countryside Dog Rescue</title>
+</head>
+
+<style>
+
+</style>
+
+<body class="bg-slate-600">
+  <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+    <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
+    <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
+      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+    <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
+      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Countryside Dog Rescue</h2>
+        <p class="mt-6 text-lg leading-8 text-gray-300">Building Bonds, Creating Forever Homes</p>
+      </div>
+      <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+          <a href="/puppies">Adopt a friend<span aria-hidden="true">&rarr;</span></a>
+          <a href="/contact"> Contact Us <span aria-hidden="true">&rarr;</span></a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="bg-gray-100 py-10">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center">
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold mb-6">About Us</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Welcome to Countryside Dog Rescue, a compassionate organization dedicated to finding forever homes for dogs in need. Our mission is to provide a safe haven for dogs and connect them with loving families in the countryside. With a deep passion for animal welfare, our experienced team of volunteers works tirelessly to rescue, rehabilitate, and rehome dogs of all breeds and sizes. We believe that every dog deserves a chance at a happy and fulfilling life, and we are committed to providing them with the care, attention, and love they need to thrive. Our thorough adoption process ensures that each dog finds the perfect match, taking into consideration their unique personalities and the lifestyle of potential adopters. Countryside Dog Rescue also promotes responsible pet ownership, offering education and support to the community. We believe in the power of second chances and invite you to join us in our mission to make a difference in the lives of these wonderful animals. Together, we can create a brighter future for dogs in the countryside, one adoption at a time.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+
+<br>
+<section class="bg-gray-100 py-10">
+  <div class="container mx-auto px-2">
+    <h2 class="text-3xl font-bold mb-6">Featured Puppies</h2>
+
+<div class="flex flex-wrap -mx-4">
+  {% for row in uPost %}
+  {% if forloop.counter <= 5 %}
+  <div class="w-1/2 md:w-1/4 p-4">
+    <div class="card rounded-lg relative">
+      <div class="front">
+        {% if row.itemPhoto.url %}
+        <img class="w-52 h-52 object-cover" src="{{ row.itemPhoto.url }}">
+        {% endif %}
+
+      </div>
+      <div class="bg-white border-gray-200  absolute bottom-0 left-0 w-52">
+        <div class="card-content p-4">
+          <h2 class="text-black text-lg font-semibold text-center">{{ row.description }}</h2>
+          <p class="text-black text-center">Age: {{ row.category }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+    
+    
+    
+    
+    
+    
+<br>
+<br>
+<br>
+    <br>
+    <center>
+      <a href="/puppies" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg">
+        See More
+      </a>
+    </center>
+    
+  </div>
+</section>
+
+<br>
+
+<section class="bg-gray-100 py-10">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6">Adoption Process</h2>
+    
+    <div class="grid grid-cols-2 gap-8">
+      <div class="bg-white rounded-lg p-6">
+        <h3 class="text-lg font-semibold mb-2">Step 1: Contact Us</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Let's start the adoption journey! During the initial consultation, we'll have an open conversation to understand your adoption goals, address any questions or concerns you may have, and provide clear guidance on the adoption process. Our knowledgeable team will ensure you feel informed and supported every step of the way.
+        </p>
+      </div>
+      
+      <div class="bg-white rounded-lg p-6">
+        <h3 class="text-lg font-semibold mb-2">Step 2: Application</h3>
+        <p class="text-gray-700 leading-relaxed">
+          The next step is to complete our adoption application. This helps us get to know you better and assess your suitability as an adopter. We value every application and conduct a comprehensive home study to ensure a safe and loving environment for our furry friends.
+        </p>
+      </div>
+      
+      <div class="bg-white rounded-lg p-6">
+        <h3 class="text-lg font-semibold mb-2">Step 3: Payment</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Once the application is approved, it's time to proceed with the adoption fee. Our dedicated team will assist you in making the payment and provide all necessary details. Please note that delivery fees, if applicable, are calculated based on distance and time.
+        </p>
+      </div>
+      
+      <div class="bg-white rounded-lg p-6">
+        <h3 class="text-lg font-semibold mb-2">Step 4: Schedule delivery of new family member</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Congratulations! After the perfect match is made, we work closely with you to finalize the adoption process. Our team will coordinate the logistics and schedule a convenient time and location for the delivery of your new family member. Get ready to welcome them into your loving home!
+        </p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+</body>
+
+
+{% include "footer.html" %}
