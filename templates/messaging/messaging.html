@@ -31,7 +31,7 @@
              {% for row in messages %}
               <li>
                 <a onclick="showmessage()" class="flex items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none">
-                  <img class="object-cover w-10 h-10 rounded-full" src="{{ row.user_post.itemPhoto.url }}" alt="username">
+                  <img class="object-cover w-10 h-10 rounded-full" src="{{ row.user_post.itemPhoto.url }}" alt="Email">
                   <div class="w-full pb-2">
                     <div class="flex justify-between">
                       <span class="block ml-2 font-semibold text-gray-600">{{row.sender}}</span>
@@ -50,7 +50,7 @@
           <div class="hidden lg:col-span-2 lg:block">
             <div class="w-full">
               <div class="relative flex items-center p-3 border-b border-gray-300">
-                <img class="object-cover w-10 h-10 rounded-full" src="{{ messages.0.user_post.itemPhoto.url }}" alt="username">
+                <img class="object-cover w-10 h-10 rounded-full" src="{{ messages.0.user_post.itemPhoto.url }}" alt="Email">
                 <span class="block ml-2 font-bold text-gray-600">{{ messages.0.sender }}</span>
               </div>
               <div class="relative w-full p-6 overflow-y-auto h-[40rem]">

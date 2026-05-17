@@ -13,4 +13,20 @@ class userPostForm(forms.ModelForm):
     class Meta():
         model = userPost
         fields = ('description','category', 'itemPhoto') 
-    
+
+class JoinForm(forms.ModelForm):
+    username = forms.CharField(
+        max_length=150,
+        validators=[
+            RegexValidator(
+                regex=r'^[\w.@+-]+$',
+                message='Username may contain only letters, digits, and @/./+/-/_ characters.'
+            )
+        ]
+    )
+    password = forms.CharField(widget=forms.PasswordInput())
+    email = forms.EmailField(required=True)
+
+    class Meta():
+        model = User
+        fields = ('username', 'email', 'password')
