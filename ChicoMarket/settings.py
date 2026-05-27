@@ -28,7 +28,7 @@ SECRET_KEY = 'ivd!y)5lr0jiqf^bh#g@fm)rpi5+pwnxap486b5o64(#l9u@ju'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", "fruteria-eli-app.azurewebsites.net"]
 
 
 # Application definition
@@ -142,4 +142,8 @@ NPM_BIN_PATH = r"/opt/homebrew/bin/npm"
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Azure reverse-proxy / CSRF fix
+CSRF_TRUSTED_ORIGINS = ['https://fruteria-eli-app.azurewebsites.net']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
